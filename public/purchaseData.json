@@ -1,0 +1,74 @@
+[
+  {
+    "transactionId": 1,
+    "customerId": 1,
+    "customerName": "Rahul",
+    "transactionDate": "2023-12-05",
+    "productPurchased": "Laptop",
+    "amount": 120
+  },
+  {
+    "transactionId": 2,
+    "customerId": 1,
+    "customerName": "Rahul",
+    "transactionDate": "2024-01-03",
+    "productPurchased": "TV",
+    "amount": 80
+  },
+  {
+    "transactionId": 3,
+    "customerId": 2,
+    "customerName": "Neha",
+    "transactionDate": "2024-01-05",
+    "productPurchased": "Mobile",
+    "amount": 84.6
+  },
+  {
+    "transactionId": 4,
+    "customerId": 2,
+    "customerName": "Neha",
+    "transactionDate": "2024-02-05",
+    "productPurchased": "Laptop",
+    "amount": 140
+  },
+  {
+    "transactionId": 5,
+    "customerId": 2,
+    "customerName": "Neha",
+    "transactionDate": "2024-03-05",
+    "productPurchased": "TV",
+    "amount": 70
+  },
+  {
+    "transactionId": 6,
+    "customerId": 3,
+    "customerName": "Kajal",
+    "transactionDate": "2024-03-07",
+    "productPurchased": "Mobile",
+    "amount": 62.5
+  },
+  {
+    "transactionId": 7,
+    "customerId": 3,
+    "customerName": "Kajal",
+    "transactionDate": "2024-04-05",
+    "productPurchased": "Laptop",
+    "amount": 100
+  },
+  {
+    "transactionId": 8,
+    "customerId": 4,
+    "customerName": "Ankur",
+    "transactionDate": "2024-03-05",
+    "productPurchased": "Laptop",
+    "amount": 105
+  },
+  {
+    "transactionId": 9,
+    "customerId": 4,
+    "customerName": "Ankur",
+    "transactionDate": "2023-12-05",
+    "productPurchased": "Mobile",
+    "amount": 125.8
+  }
+]
