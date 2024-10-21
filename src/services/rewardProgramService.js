@@ -1,5 +1,7 @@
 import { constants } from '../utils/constants';
-const fetchTransactionsData = async () => {
+
+// this service fetches the purchase data from mocked JSON file.
+export const fetchTransactionsData = async () => {
   try {
     const response = await fetch('/purchaseData.json');
     if (!response.ok) {

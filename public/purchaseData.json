@@ -1,74 +1,82 @@
 [
   {
-    "transactionId": 1,
+    "purchaseId": 1,
     "customerId": 1,
     "customerName": "Rahul",
-    "transactionDate": "2023-12-05",
+    "purchaseDate": "2023-12-05",
     "productPurchased": "Laptop",
     "amount": 120
   },
   {
-    "transactionId": 2,
+    "purchaseId": 2,
     "customerId": 1,
     "customerName": "Rahul",
-    "transactionDate": "2024-01-03",
+    "purchaseDate": "2024-01-03",
     "productPurchased": "TV",
     "amount": 80
   },
   {
-    "transactionId": 3,
+    "purchaseId": 3,
     "customerId": 2,
     "customerName": "Neha",
-    "transactionDate": "2024-01-05",
+    "purchaseDate": "2024-01-05",
     "productPurchased": "Mobile",
     "amount": 84.6
   },
   {
-    "transactionId": 4,
+    "purchaseId": 4,
     "customerId": 2,
     "customerName": "Neha",
-    "transactionDate": "2024-02-05",
+    "purchaseDate": "2024-02-05",
     "productPurchased": "Laptop",
     "amount": 140
   },
   {
-    "transactionId": 5,
+    "purchaseId": 5,
     "customerId": 2,
     "customerName": "Neha",
-    "transactionDate": "2024-03-05",
+    "purchaseDate": "2024-03-05",
     "productPurchased": "TV",
     "amount": 70
   },
   {
-    "transactionId": 6,
+    "purchaseId": 6,
     "customerId": 3,
     "customerName": "Kajal",
-    "transactionDate": "2024-03-07",
+    "purchaseDate": "2023-03-07",
     "productPurchased": "Mobile",
     "amount": 62.5
   },
   {
-    "transactionId": 7,
+    "purchaseId": 7,
     "customerId": 3,
     "customerName": "Kajal",
-    "transactionDate": "2024-04-05",
+    "purchaseDate": "2023-04-05",
     "productPurchased": "Laptop",
     "amount": 100
   },
   {
-    "transactionId": 8,
+    "purchaseId": 8,
     "customerId": 4,
     "customerName": "Ankur",
-    "transactionDate": "2024-03-05",
+    "purchaseDate": "2024-03-05",
     "productPurchased": "Laptop",
     "amount": 105
   },
   {
-    "transactionId": 9,
+    "purchaseId": 9,
     "customerId": 4,
     "customerName": "Ankur",
-    "transactionDate": "2023-12-05",
+    "purchaseDate": "2023-12-05",
     "productPurchased": "Mobile",
     "amount": 125.8
+  },
+  {
+    "purchaseId": 10,
+    "customerId": 4,
+    "customerName": "Ankur",
+    "purchaseDate": "2023-11-06",
+    "productPurchased": "Mobile",
+    "amount": 132.4
   }
 ]

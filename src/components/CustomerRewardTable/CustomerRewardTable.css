@@ -1,0 +1,19 @@
+.table-row {
+    background-color:  lightsteelblue;
+}
+
+.rewardTable{
+    width: -webkit-fill-available;
+}
+
+.rewardTable thead th {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.overallRewardPoints {
+    font-size: 15px;
+    text-align: left;
+    margin-top: 20px;
+    font-weight: bold;
+}
