@@ -13,6 +13,8 @@ export const constants = {
   REWARD_TABLE: 'User Rewards Table',
   TOTAL_POINTS_IN_YEAR: 'Total Yearly Points',
   TOTAL_POINTS_OVERALL: 'Overall Reward Points',
-  CUSTOMER_NAME: 'Customer Name'
+  CUSTOMER_NAME: 'Customer Name',
+  PRODUCT_PURCHASED: 'Product Purchased',
+  ALL_TRANSACTIONS: 'All Transactions'
 }
 

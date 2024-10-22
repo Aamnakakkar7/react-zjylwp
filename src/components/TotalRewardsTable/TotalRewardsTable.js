@@ -1,12 +1,12 @@
 import { Table, TableContainer, TableBody, TableCell, TableRow, TableHead, Paper} from '@mui/material';
 import { constants } from '../../utils/constants';
+import calculateTotalPointsPerCustomer from '../../utils/calculateTotalPointsPerCustomer';
 import './TotalRewardsTable.css';
 
-const TotalRewardsTable = (({totalReceivedPoints}) => {
-    const uniquePointsObject = Object.values(totalReceivedPoints).reduce((acc, value) => {
-        acc[value.customerName] = value.totalPoints;
-        return acc;
-    },{});
+const TotalRewardsTable = ((purchaseData) => {
+    const customerPointsObject = calculateTotalPointsPerCustomer(purchaseData);
+    const customerPoints = Object.values(customerPointsObject || {});
+    console.log(customerPoints)
 
     return (
         <div>
@@ -20,11 +20,11 @@ const TotalRewardsTable = (({totalReceivedPoints}) => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {Object.entries(uniquePointsObject).map((entry, index) => (
-                              <TableRow key={`${index}`}>
-                              <TableCell>{entry[0]}</TableCell>
-                              <TableCell>{entry[1]}{' '}
-                                         {entry[1] > 1 ? 'points' : 'point'}
+                        {customerPoints.map((entry, index) => (
+                              <TableRow key={index}>
+                              <TableCell>{entry.customerName}</TableCell>
+                              <TableCell>{entry.totalPoints}{' '}
+                                         {entry.totalPoints > 1 ? 'points' : 'point'}
                               </TableCell>          
                           </TableRow>     
                         ))}
