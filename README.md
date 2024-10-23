@@ -20,7 +20,7 @@ Given a record of every transaction during a three month period, calculate the r
 ### Setup
 
 1. **Clone the repository:**    
-https://github.com/aamnakakkar7/customer-reward-program/
+https://github.com/Aamnakakkar7/react-zjylwp
 
 2. **Install dependencies:**
    npm install
@@ -43,7 +43,7 @@ The application uses mock from:
 ## Features
 
 - Calculate Reward points earned for each customer per month and in total as per mock data
-- Show data based on latest consecutive N month period of time
+- Show data based on latest consecutive 3 month period of time
   - Transaction data can be with in the same year or spans different years
 
 * Data is grouped based on years if it spans different years
@@ -51,4 +51,3 @@ The application uses mock from:
 * Rounded up rewards
 
 * Loading screen and Error handling is implemented
-* Test cases for all of the above scenarios are added

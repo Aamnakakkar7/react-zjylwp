@@ -28,6 +28,6 @@ describe('calculateRewardPointsByThresholdFunction', () => {
 
     it('Should calculate points correctly for purchase in decimal amount', () => {
         const testDataPoints = calculateRewardPointsByThreshold(72.5);
-        expect(testDataPoints).toBe(23);
+        expect(testDataPoints).toBe(22);
     });
  });

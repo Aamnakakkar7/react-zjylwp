@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchTransactionsData } from '../../services/rewardProgramService';
-import { latestDataSet } from '../../utils/latestData';
+import latestDataSet from '../../utils/latestData';
 import { constants } from '../../utils/constants';
 import CustomerRewardTable from '../CustomerRewardTable/CustomerRewardTable';
 import AllTransactionsTable from '../AllTransactionsTable/AllTransactionsTable';

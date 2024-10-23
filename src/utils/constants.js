@@ -15,6 +15,7 @@ export const constants = {
   TOTAL_POINTS_OVERALL: 'Overall Reward Points',
   CUSTOMER_NAME: 'Customer Name',
   PRODUCT_PURCHASED: 'Product Purchased',
-  ALL_TRANSACTIONS: 'All Transactions'
+  ALL_TRANSACTIONS: 'All Transactions',
+  PURCHASE_LESS_THAN_50: 50
 }
 

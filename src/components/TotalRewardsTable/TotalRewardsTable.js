@@ -6,7 +6,6 @@ import './TotalRewardsTable.css';
 const TotalRewardsTable = ((purchaseData) => {
     const customerPointsObject = calculateTotalPointsPerCustomer(purchaseData);
     const customerPoints = Object.values(customerPointsObject || {});
-    console.log(customerPoints)
 
     return (
         <div>

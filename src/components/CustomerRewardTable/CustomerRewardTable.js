@@ -14,7 +14,7 @@ const CustomerRewardTable = (({receivedData}) => {
             <TableContainer component = {Paper}>
                 {Object.entries(receivedData).map(([filterationKey, items]) => (
                     <React.Fragment key={filterationKey}>
-                        <h3 class="monthHeading">{filterationKey}</h3>
+                        <h3 className="monthHeading">{filterationKey}</h3>
                         <Table className="rewardTable" sx={{ maxHeight: 400 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow className="table-row">

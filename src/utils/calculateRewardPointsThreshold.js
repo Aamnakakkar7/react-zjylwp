@@ -11,6 +11,10 @@ const calculateRewardPointsByThreshold = (purchaseAmount) => {
         rewardPoints += 1 * (purchaseAmount - constants.PURCHASE_BETWEEN_50_AND_100);
         return Math.floor(rewardPoints);
     }
+    if (purchaseAmount <= constants.PURCHASE_LESS_THAN_50) {
+        rewardPoints = 0
+        return rewardPoints;
+    }
 };
 
 export default calculateRewardPointsByThreshold;

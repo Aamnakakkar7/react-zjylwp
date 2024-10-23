@@ -1,7 +1,9 @@
-import { calculateTotalPointsPerCustomer } from "../utils/calculateTotalPointsPerCustomer";
+import  calculateTotalPointsPerCustomer  from "../utils/calculateTotalPointsPerCustomer";
 
-describe('calculateTotalPointsPerCustomer', () => {
-    const data = [{
+describe('calculateTotalPointsEarnedPerCustomer', () => {
+
+    it('should calculate total points earned by each customer', () => {
+      const data = [{
         "purchaseId": 1,
         "customerId": 1,
         "customerName": "Rahul",
@@ -32,18 +34,17 @@ describe('calculateTotalPointsPerCustomer', () => {
         "purchaseDate": "2024-02-05",
         "productPurchased": "Laptop",
         "amount": 140
-      }]
-
-      it('should calculate total points earned by each customer', () => {
-        const resultData = calculateTotalPointsPerCustomer(data);
-        expect(resultData).toEqual({
-            1: {customerName: "Rahul", totalPoints: 120},
-            2: {customerName: "Neha", totalPoints: 184}
-        });
+    }]
+      const resultData = calculateTotalPointsPerCustomer(data);
+      expect(resultData).toEqual({
+          1: {customerName: "Rahul", totalPoints: 120},
+          2: {customerName: "Neha", totalPoints: 184}
       });
+    });
 
-      it('should return empty object if data is not an array', () => {
-        const resultData = calculateTotalPointsPerCustomer(null);
-        expect(resultData).toEqual({});
-      });
+    it('should return empty object if data is not an array', () => {
+      const data = null;
+      const resultData = calculateTotalPointsPerCustomer(data);
+      expect(resultData).toEqual({});
+    });
 });
