@@ -51,3 +51,7 @@ The application uses mock from:
 * Rounded up rewards
 
 * Loading screen and Error handling is implemented
+
+## Screenshots
+
+![alt text](image.png)
