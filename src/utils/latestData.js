@@ -1,4 +1,4 @@
-// This method calculates total points earned by customer considering all transactions.
+// This method filters latest 3 months data from dataset.
 const latestDataSet = (purchaseData) => {
 if (!Array.isArray(purchaseData)) return {};
 const sortedData = purchaseData.sort((a,b) => new Date(b.purchaseDate) - new Date(a.purchaseDate));
