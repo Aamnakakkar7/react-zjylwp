@@ -2,18 +2,11 @@
     background-color:  lightsteelblue;
 }
 
-.rewardTable{
+.reward-table{
     width: -webkit-fill-available;
 }
 
-.rewardTable thead th {
+.reward-table thead th {
     font-size: 12px;
-    font-weight: bold;
-}
-
-.overallRewardPoints {
-    font-size: 15px;
-    text-align: left;
-    margin-top: 20px;
     font-weight: bold;
 }

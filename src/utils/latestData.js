@@ -1,3 +1,5 @@
+import logger from "../logger";
+
 // This method filters latest 3 months data from dataset.
 const latestDataSet = (purchaseData) => {
 if (!Array.isArray(purchaseData)) return {};
@@ -8,7 +10,8 @@ threeMonthsAgo.setMonth(latestDate.getMonth() - 3);
 const filteredThreeMonthsData = sortedData.filter((data) => {
     const transactionDate = new Date(data.purchaseDate);
     return transactionDate > threeMonthsAgo && transactionDate <= latestDate;
-})
+});
+logger.log('Latest 3 months data as per dataset:', filteredThreeMonthsData);
 if (!Array.isArray(filteredThreeMonthsData)) return {};
 return filteredThreeMonthsData.reduce((acc, item) => {
     const date = new Date(item.purchaseDate);

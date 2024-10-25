@@ -7,11 +7,11 @@ import './AllTransactionsTable.css';
 const AllTransactionsTable = ((purchaseData) => {
     return (
         <div>
-            <h3 className='totalTransactions'>{constants.ALL_TRANSACTIONS}</h3>
+            <h3 className='total-transactions'>{constants.ALL_TRANSACTIONS}</h3>
             <TableContainer component = {Paper}>
                 {Object.entries(purchaseData).map(([index, items]) => (
                     <React.Fragment key={index}>
-                        <Table className="rewardTable" sx={{ maxHeight: 400 }} aria-label="simple table">
+                        <Table className="reward-table" sx={{ maxHeight: 400 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow className="table-row">
                                     <TableCell>{constants.ID_OF_PURCHASE}</TableCell>

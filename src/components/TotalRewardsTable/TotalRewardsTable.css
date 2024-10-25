@@ -1,9 +1,9 @@
-.totalRewardTable{
+.total-reward-table{
     width: -webkit-fill-available;
     margin-top: 10px;
 }
 
-.totalRewardHeading {
+.total-reward-heading {
     font-size: 20px;
     margin-top: 50px;
 }

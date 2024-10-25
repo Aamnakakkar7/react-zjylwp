@@ -6,12 +6,13 @@ import './TotalRewardsTable.css';
 const TotalRewardsTable = ((purchaseData) => {
     const customerPointsObject = calculateTotalPointsPerCustomer(purchaseData);
     const customerPoints = Object.values(customerPointsObject || {});
+    console.log('Total Points earned by a customer', customerPoints);
 
     return (
         <div>
-            <h3 className="totalRewardHeading">{constants.TOTAL_POINTS_OVERALL}</h3>
+            <h3 className="total-reward-heading">{constants.TOTAL_POINTS_OVERALL}</h3>
             <TableContainer component = {Paper}>
-                <Table className="totalRewardTable" sx={{ maxHeight: 400 }} aria-label="simple table">
+                <Table className="total-reward-table" sx={{ maxHeight: 400 }} aria-label="simple table">
                     <TableHead>
                         <TableRow className="table-row">
                             <TableCell>{constants.CUSTOMER_NAME}</TableCell>

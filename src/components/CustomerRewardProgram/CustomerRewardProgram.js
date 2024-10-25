@@ -6,6 +6,7 @@ import CustomerRewardTable from '../CustomerRewardTable/CustomerRewardTable';
 import AllTransactionsTable from '../AllTransactionsTable/AllTransactionsTable';
 import TotalRewardsTable from '../TotalRewardsTable/TotalRewardsTable';
 import './CustomerRewardProgram.css'
+import logger from '../../logger';
 
 const CustomerRewardProgram = () => {
   const [purchaseData, setPurchaseData] = useState([]);
@@ -19,8 +20,10 @@ const CustomerRewardProgram = () => {
       try {
         const response = await fetchTransactionsData();
         setPurchaseData(response);
+        logger.log('All Transactions Data:', response);
         setLoadingData(false);
       } catch (errorMessage) {
+          logger.log('Error:', errorMessage)
           setErrorMessage(errorMessage);
           setLoadingData(false);
       }
@@ -31,6 +34,7 @@ const CustomerRewardProgram = () => {
   useEffect(() => {
     if (purchaseData && purchaseData.length > 0) {
       const dataReceived = latestDataSet(purchaseData);
+      logger.log('Latest three months data:', dataReceived);
       setLatestData(dataReceived);
     }
   }, [purchaseData]);
@@ -51,7 +55,7 @@ const CustomerRewardProgram = () => {
         {!loadingData ? 
         (
           <div>
-            <h3 className="rewardHeading">{constants.REWARD_TABLE}</h3>
+            <h3 className="reward-heading">{constants.REWARD_TABLE}</h3>
             <div>
                 <CustomerRewardTable receivedData={latestData}/>
                 <TotalRewardsTable purchaseData={purchaseData}/>
