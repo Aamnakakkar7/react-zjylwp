@@ -19,8 +19,10 @@ const CustomerRewardProgram = () => {
     const getPurchaseDataFromApi = async () => {
       try {
         const response = await fetchTransactionsData();
-        setPurchaseData(response);
-        logger.log('All Transactions Data:', response);
+        if (response && response.length > 0 ) {
+            setPurchaseData(response);
+            logger.log('All Transactions Data:', response);
+        }
         setLoadingData(false);
       } catch (errorMessage) {
           logger.log('Error:', errorMessage)

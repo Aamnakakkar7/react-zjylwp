@@ -2,11 +2,12 @@ import { Table, TableContainer, TableBody, TableCell, TableRow, TableHead, Paper
 import { constants } from '../../utils/constants';
 import calculateTotalPointsPerCustomer from '../../utils/calculateTotalPointsPerCustomer';
 import './TotalRewardsTable.css';
+import logger from '../../logger';
 
-const TotalRewardsTable = ((purchaseData) => {
+const TotalRewardsTable = ({purchaseData}) => {
     const customerPointsObject = calculateTotalPointsPerCustomer(purchaseData);
     const customerPoints = Object.values(customerPointsObject || {});
-    console.log('Total Points earned by a customer', customerPoints);
+    logger.log('Total Points earned by a customer', customerPoints);
 
     return (
         <div>
@@ -33,6 +34,6 @@ const TotalRewardsTable = ((purchaseData) => {
             </TableContainer>
         </div>
     )
-})
+}
 
 export default TotalRewardsTable;

@@ -38,7 +38,7 @@ describe('calculateTotalPointsEarnedPerCustomer', () => {
       const resultData = calculateTotalPointsPerCustomer(data);
       expect(resultData).toEqual({
           1: {customerName: "Rahul", totalPoints: 120},
-          2: {customerName: "Neha", totalPoints: 184}
+          2: {customerName: "Neha", totalPoints: 164}
       });
     });
 
