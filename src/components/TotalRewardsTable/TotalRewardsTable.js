@@ -1,11 +1,11 @@
 import { Table, TableContainer, TableBody, TableCell, TableRow, TableHead, Paper} from '@mui/material';
 import { constants } from '../../utils/constants';
-import calculateTotalPointsPerCustomer from '../../utils/calculateTotalPointsPerCustomer';
+import calculateOverallRewardPoints from '../../utils/calculateOverallRewardPoints';
 import './TotalRewardsTable.css';
 import logger from '../../logger';
 
 const TotalRewardsTable = ({purchaseData}) => {
-    const customerPointsObject = calculateTotalPointsPerCustomer(purchaseData);
+    const customerPointsObject = calculateOverallRewardPoints(purchaseData);
     const customerPoints = Object.values(customerPointsObject || {});
     logger.log('Total Points earned by a customer', customerPoints);
 

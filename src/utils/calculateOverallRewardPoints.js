@@ -1,7 +1,7 @@
-import calculateRewardPointsByThreshold from './calculateRewardPointsThreshold';
+import calculatePointsPerTransaction from './calculatePointsPerTransaction';
 
 // this method calculates total points earned by customer
-const calculateTotalPointsPerCustomer = (purchaseData) => {
+const calculateOverallRewardPoints = (purchaseData) => {
     if (!Array.isArray(purchaseData)) {
         return {};
     }
@@ -11,9 +11,9 @@ const calculateTotalPointsPerCustomer = (purchaseData) => {
         if (!acc[customerId]) {
             acc[customerId] = {customerName, totalPoints: 0};
         }
-        acc[customerId].totalPoints += calculateRewardPointsByThreshold(amount);
+        acc[customerId].totalPoints += calculatePointsPerTransaction(amount);
         return acc;
     },{});
 }
 
-export default calculateTotalPointsPerCustomer;
+export default calculateOverallRewardPoints;

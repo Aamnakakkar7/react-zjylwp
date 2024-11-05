@@ -78,5 +78,29 @@
     "purchaseDate": "2023-11-06",
     "productPurchased": "Mobile",
     "amount": 132.4
+  },
+  {
+    "purchaseId": 11,
+    "customerId": 4,
+    "customerName": "Ankur",
+    "purchaseDate": "2024-03-08",
+    "productPurchased": "Mobile",
+    "amount": 100
+  },
+  {
+    "purchaseId": 12,
+    "customerId": 3,
+    "customerName": "Kajal",
+    "purchaseDate": "2024-03-07",
+    "productPurchased": "Mobile",
+    "amount": 62.5
+  },
+  {
+    "purchaseId": 13,
+    "customerId": 3,
+    "customerName": "Kajal",
+    "purchaseDate": "2024-03-08",
+    "productPurchased": "Mobile",
+    "amount": 72.5
   }
 ]

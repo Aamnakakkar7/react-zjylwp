@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { fetchTransactionsData } from '../../services/rewardProgramService';
-import latestDataSet from '../../utils/latestData';
+import latestMonthsDataSet from '../../utils/latestMonthsData';
 import { constants } from '../../utils/constants';
-import CustomerRewardTable from '../CustomerRewardTable/CustomerRewardTable';
+import MonthlyRewardTable from '../MonthlyRewardTable/MonthlyRewardTable';
 import AllTransactionsTable from '../AllTransactionsTable/AllTransactionsTable';
 import TotalRewardsTable from '../TotalRewardsTable/TotalRewardsTable';
 import './CustomerRewardProgram.css'
@@ -10,43 +10,30 @@ import logger from '../../logger';
 
 const CustomerRewardProgram = () => {
   const [purchaseData, setPurchaseData] = useState([]);
-  const [latestData, setLatestData] = useState([]);
-  const [loadingData, setLoadingData] = useState(false);
+  const [latestMonthsData, setlatestMonthsData] = useState({});
+  const [loadingData, setLoadingData] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    setLoadingData(true);
-    const getPurchaseDataFromApi = async () => {
+    const fetchAndSetlatestMonthsData = async () => {
       try {
         const response = await fetchTransactionsData();
         if (response && response.length > 0 ) {
             setPurchaseData(response);
+            const dataReceived = latestMonthsDataSet(response);
+            setlatestMonthsData(dataReceived);
             logger.log('All Transactions Data:', response);
+            logger.log('Latest three months data:', dataReceived);
         }
-        setLoadingData(false);
       } catch (errorMessage) {
           logger.log('Error:', errorMessage)
           setErrorMessage(errorMessage);
-          setLoadingData(false);
-      }
-    }
-    getPurchaseDataFromApi();
-  }, []);
-
-  useEffect(() => {
-    if (purchaseData && purchaseData.length > 0) {
-      const dataReceived = latestDataSet(purchaseData);
-      logger.log('Latest three months data:', dataReceived);
-      setLatestData(dataReceived);
-    }
-  }, [purchaseData]);
-  
-  useEffect(() => {
-    setTimeout(() => {
+      } finally {
         setLoadingData(false);
-    }, 1000);
-  }, [purchaseData])
-
+      }
+    };
+    fetchAndSetlatestMonthsData();
+  }, []);
 
   if (errorMessage) {
     return <h3>{errorMessage}</h3>;
@@ -59,7 +46,7 @@ const CustomerRewardProgram = () => {
           <div>
             <h3 className="reward-heading">{constants.REWARD_TABLE}</h3>
             <div>
-                <CustomerRewardTable receivedData={latestData}/>
+                <MonthlyRewardTable receivedData={latestMonthsData}/>
                 <TotalRewardsTable purchaseData={purchaseData}/>
                 <AllTransactionsTable receivedData={purchaseData}/>
             </div>

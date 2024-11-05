@@ -2,7 +2,11 @@ import {constants} from './constants';
 import logger from '../logger';
 
 // This method calculates reward points as per amount spent by customer in that transaction.
-const calculateRewardPointsByThreshold = (purchaseAmount) => {
+const calculatePointsPerTransaction = (purchaseAmount) => {
+    if ( isNaN(purchaseAmount) || typeof purchaseAmount !== 'number') {
+        logger.log('Invalid purchase amount');
+        return 0;
+    }
     let rewardPoints = 0;
     if (purchaseAmount > constants.PURCHASE_OVER_100) {
         rewardPoints += 50 + (2 * (purchaseAmount - constants.PURCHASE_OVER_100));
@@ -14,11 +18,10 @@ const calculateRewardPointsByThreshold = (purchaseAmount) => {
         logger.log('Points earned for this transaction:', rewardPoints);
         return Math.floor(rewardPoints);
     }
-    if (purchaseAmount <= constants.PURCHASE_LESS_THAN_50) {
+    if (purchaseAmount <= constants.PURCHASE_LESS_THAN_50) { //NaN
         rewardPoints = 0;
         logger.log('Points earned for this transaction:', rewardPoints);
         return rewardPoints;
     }
 };
-
-export default calculateRewardPointsByThreshold;
+export default calculatePointsPerTransaction;

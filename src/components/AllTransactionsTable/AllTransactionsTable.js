@@ -1,7 +1,7 @@
 import { Table, TableContainer, TableBody, TableCell, TableRow, TableHead, Paper} from '@mui/material';
 import { constants } from '../../utils/constants';
 import React from 'react';
-import calculateRewardPointsByThreshold from '../../utils/calculateRewardPointsThreshold';
+import calculatePointsPerTransaction from '../../utils/calculatePointsPerTransaction';
 import './AllTransactionsTable.css';
 
 const AllTransactionsTable = ((purchaseData) => {
@@ -32,7 +32,7 @@ const AllTransactionsTable = ((purchaseData) => {
                                             <TableCell>{item.purchaseDate}</TableCell>
                                             <TableCell>{item.productPurchased}</TableCell>
                                             <TableCell>{item.amount}</TableCell>
-                                            <TableCell>{calculateRewardPointsByThreshold(item.amount)}</TableCell>
+                                            <TableCell>{calculatePointsPerTransaction(item.amount)}</TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>

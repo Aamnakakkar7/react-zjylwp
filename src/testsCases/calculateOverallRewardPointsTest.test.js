@@ -1,4 +1,4 @@
-import  calculateTotalPointsPerCustomer  from "../utils/calculateTotalPointsPerCustomer";
+import  calculateOverallRewardPoints  from "../utils/calculateOverallRewardPoints";
 
 describe('calculateTotalPointsEarnedPerCustomer', () => {
 
@@ -35,7 +35,7 @@ describe('calculateTotalPointsEarnedPerCustomer', () => {
         "productPurchased": "Laptop",
         "amount": 140
     }]
-      const resultData = calculateTotalPointsPerCustomer(data);
+      const resultData = calculateOverallRewardPoints(data);
       expect(resultData).toEqual({
           1: {customerName: "Rahul", totalPoints: 120},
           2: {customerName: "Neha", totalPoints: 164}
@@ -44,7 +44,7 @@ describe('calculateTotalPointsEarnedPerCustomer', () => {
 
     it('should return empty object if data is not an array', () => {
       const data = null;
-      const resultData = calculateTotalPointsPerCustomer(data);
+      const resultData = calculateOverallRewardPoints(data);
       expect(resultData).toEqual({});
     });
 });
