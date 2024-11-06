@@ -16,6 +16,5 @@ export const constants = {
   CUSTOMER_NAME: 'Customer Name',
   PRODUCT_PURCHASED: 'Product Purchased',
   ALL_TRANSACTIONS: 'All Transactions',
-  PURCHASE_LESS_THAN_50: 50
 }
 

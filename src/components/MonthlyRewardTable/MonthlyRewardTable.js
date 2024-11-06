@@ -7,9 +7,9 @@ const MonthlyRewardTable = (({receivedData}) => {
     return (
         <div>
             <TableContainer component = {Paper}>
-                {Object.keys(receivedData).map((filterationKey) => (
-                    <React.Fragment key={filterationKey}>
-                        <h3>{filterationKey}</h3>
+                {Object.keys(receivedData).map((filterKey) => (
+                    <React.Fragment key={filterKey}>
+                        <h3>{filterKey}</h3>
                         <Table className="reward-table" sx={{ maxHeight: 400 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow className="table-row">
@@ -19,7 +19,7 @@ const MonthlyRewardTable = (({receivedData}) => {
                                     </TableRow>
                             </TableHead>
                             <TableBody>
-                                {Object.values(receivedData[filterationKey]).map((customer) => (
+                                {Object.values(receivedData[filterKey]).map((customer) => (
                                     <TableRow key={customer.customerId}>
                                         <TableCell>{customer.customerId}</TableCell>
                                         <TableCell>{customer.customerName}</TableCell>

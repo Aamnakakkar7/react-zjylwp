@@ -14,25 +14,24 @@ const latestMonthsDataSet = (purchaseData) => {
     });
 
     logger.log('Latest 3 months data as per dataset:', filteredThreeMonthsData);
-    if (!Array.isArray(filteredThreeMonthsData)) return {};
 
     return filteredThreeMonthsData.reduce((acc, item) => {
         const date = new Date(item.purchaseDate);
         const year = date.getFullYear();
         const month = date.toLocaleString('default', { month: 'long' });
-        const filterationKey = `${month} ${year}`;
+        const filterKey = `${month} ${year}`;
         const points = calculatePointsPerTransaction(item.amount);
-        if (!acc[filterationKey]) {
-            acc[filterationKey] = {};
+        if (!acc[filterKey]) {
+            acc[filterKey] = {};
         } 
-        if (!acc[filterationKey][item.customerId]) {
-            acc[filterationKey][item.customerId] = {
+        if (!acc[filterKey][item.customerId]) {
+            acc[filterKey][item.customerId] = {
                 customerId: item.customerId,
                 customerName: item.customerName,
                 totalRewards: 0,
             }
         }
-        acc[filterationKey][item.customerId].totalRewards += points;
+        acc[filterKey][item.customerId].totalRewards += points;
         return acc;
     },{});
 }
