@@ -54,4 +54,4 @@ The application uses mock from:
 
 ## Screenshots
 
-![alt text](image.png)
+![alt text](image_app.jpeg)
