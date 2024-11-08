@@ -13,8 +13,10 @@ export const fetchTransactionsData = async () => {
     logger.log('Fetched Customer Data From Service:', responseData);
     return responseData;
 
-    } catch (err) {
+  } catch (err) {
       logger.log('Error:', err);
       throw err;
-    }
+  } finally {
+     //alert('hi');
+  }
 };
