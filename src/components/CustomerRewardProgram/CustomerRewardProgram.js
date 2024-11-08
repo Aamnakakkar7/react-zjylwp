@@ -4,7 +4,7 @@ import latestMonthsDataSet from '../../utils/latestMonthsData';
 import { constants } from '../../utils/constants';
 import MonthlyRewardTable from '../MonthlyRewardTable/MonthlyRewardTable';
 import AllTransactionsTable from '../AllTransactionsTable/AllTransactionsTable';
-import TotalRewardsTable from '../TotalRewardsTable/TotalRewardsTable';
+import OverallRewardsTable from '../OverallRewardsTable/OverallRewardsTable';
 import './CustomerRewardProgram.css'
 import logger from '../../logger';
 
@@ -47,7 +47,7 @@ const CustomerRewardProgram = () => {
             <h3 className="reward-heading">{constants.REWARD_TABLE}</h3>
             <div>
                 <MonthlyRewardTable receivedData={latestMonthsData}/>
-                <TotalRewardsTable purchaseData={purchaseData}/>
+                <OverallRewardsTable purchaseData={purchaseData}/>
                 <AllTransactionsTable receivedData={purchaseData}/>
             </div>
           </div>
