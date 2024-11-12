@@ -1,4 +1,4 @@
-import latestMonthsDataSet from '../utils/latestMonthsData';
+import { latestMonthsDataSet } from '../utils';
 
 describe('filterLatestThreeMonthsData', () => {
     const dataSet = [

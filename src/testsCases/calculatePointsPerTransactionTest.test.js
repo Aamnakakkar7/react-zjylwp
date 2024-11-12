@@ -1,4 +1,4 @@
-import calculatePointsPerTransaction from '../utils/calculatePointsPerTransaction';
+import { calculatePointsPerTransaction } from '../utils';
 
 describe('calculatePointsPerTransactionFunction', () => {
     it('Should calculate points correctly for purchase above $100', () => {

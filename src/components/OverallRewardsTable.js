@@ -1,13 +1,11 @@
 import { Table, TableContainer, TableBody, TableCell, TableRow, TableHead, Paper} from '@mui/material';
-import { constants } from '../../utils/constants';
-import calculateOverallRewardPoints from '../../utils/calculateOverallRewardPoints';
-import './OverallRewardsTable.css';
-import logger from '../../logger';
+import { constants, calculateOverallRewardPoints } from '../utils';
+import '../style.css';
+import PropTypes from 'prop-types';
 
 const OverallRewardsTable = ({purchaseData}) => {
     const customerPointsObject = calculateOverallRewardPoints(purchaseData);
     const customerPoints = Object.values(customerPointsObject || {});
-    logger.log('Total Points earned by a customer', customerPoints);
 
     return (
         <div>
@@ -34,6 +32,12 @@ const OverallRewardsTable = ({purchaseData}) => {
             </TableContainer>
         </div>
     )
-}
+};
+
+OverallRewardsTable.propTypes = {
+    customerId: PropTypes.number,
+    customerName: PropTypes.string,
+    totalRewards: PropTypes.number
+};
 
 export default OverallRewardsTable;

@@ -13,8 +13,6 @@ const latestMonthsDataSet = (purchaseData) => {
         return transactionDate > threeMonthsAgo && transactionDate <= latestDate;
     });
 
-    logger.log('Latest 3 months data as per dataset:', filteredThreeMonthsData);
-
     return filteredThreeMonthsData.reduce((acc, item) => {
         const date = new Date(item.purchaseDate);
         const year = date.getFullYear();
@@ -35,6 +33,4 @@ const latestMonthsDataSet = (purchaseData) => {
         return acc;
     },{});
 }
-
-
 export default latestMonthsDataSet;

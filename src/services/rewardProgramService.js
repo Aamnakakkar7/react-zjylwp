@@ -10,13 +10,13 @@ export const fetchTransactionsData = async () => {
       throw new Error(constants.ERROR_MESSAGE);
     }
     const responseData = await response.json();
-    logger.log('Fetched Customer Data From Service:', responseData);
+    logger.log('Fetched Customer Data From Service successfully');
     return responseData;
 
   } catch (err) {
       logger.log('Error:', err);
       throw err;
   } finally {
-     //alert('hi');
+      logger.log('API call completed.')
   }
 };

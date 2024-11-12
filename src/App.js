@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomerRewardProgram from './components/CustomerRewardProgram/CustomerRewardProgram';
+import CustomerRewardProgram from './components/CustomerRewardProgram';
 import './style.css';
 
 function App() {

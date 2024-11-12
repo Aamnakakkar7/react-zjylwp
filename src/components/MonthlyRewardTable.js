@@ -1,7 +1,9 @@
 import { Table, TableContainer, TableBody, TableCell, TableRow, TableHead, Paper} from '@mui/material';
-import { constants } from '../../utils/constants';
+import { constants } from '../utils';
 import React from 'react';
-import './MonthlyRewardTable.css';
+import '../style.css';
+import PropTypes from 'prop-types';
+
 
 const MonthlyRewardTable = (({receivedData}) => {
     return (
@@ -34,5 +36,11 @@ const MonthlyRewardTable = (({receivedData}) => {
         </div>
     );
 });
+
+MonthlyRewardTable.propTypes = {
+    customerId: PropTypes.number,
+    customerName: PropTypes.string,
+    totalRewards: PropTypes.number
+};
 
 export default MonthlyRewardTable;

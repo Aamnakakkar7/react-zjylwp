@@ -1,4 +1,4 @@
-import  calculateOverallRewardPoints  from "../utils/calculateOverallRewardPoints";
+import  { calculateOverallRewardPoints }  from "../utils";
 
 describe('calculateTotalPointsEarnedPerCustomer', () => {
 

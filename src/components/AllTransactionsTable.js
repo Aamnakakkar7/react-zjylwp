@@ -1,8 +1,9 @@
-import { Table, TableContainer, TableBody, TableCell, TableRow, TableHead, Paper} from '@mui/material';
-import { constants } from '../../utils/constants';
 import React from 'react';
-import calculatePointsPerTransaction from '../../utils/calculatePointsPerTransaction';
-import './AllTransactionsTable.css';
+import { Table, TableContainer, TableBody, TableCell, TableRow, TableHead, Paper} from '@mui/material';
+import { constants, calculatePointsPerTransaction } from '../utils';
+import '../style.css';
+import PropTypes from 'prop-types';
+
 
 const AllTransactionsTable = ((purchaseData) => {
     return (
@@ -42,6 +43,15 @@ const AllTransactionsTable = ((purchaseData) => {
             </TableContainer>
         </div>
     );
-})
+});
+
+AllTransactionsTable.propTypes = {
+    purchaseId: PropTypes.number,
+    customerId: PropTypes.number,
+    customerName: PropTypes.string,
+    purchaseDate: PropTypes.string,
+    productPurchased: PropTypes.string,
+    amount: PropTypes.number
+};
 
 export default AllTransactionsTable;
