@@ -1,35 +1,25 @@
-import { Table, TableContainer, TableBody, TableCell, TableRow, TableHead, Paper} from '@mui/material';
+import React from 'react';
 import { constants, calculateOverallRewardPoints } from '../utils';
-import '../style.css';
+import RewardTable from './RewardTable';
 import PropTypes from 'prop-types';
 
 const OverallRewardsTable = ({purchaseData}) => {
+    const columns = [
+        { field: 'customerName', headerName: constants.CUSTOMER_NAME },
+        { field: 'totalPoints', headerName: constants.TOTAL_POINTS_OVERALL },
+    ]
     const customerPointsObject = calculateOverallRewardPoints(purchaseData);
     const customerPoints = Object.values(customerPointsObject || {});
+
+    const serializer = (item) => ({
+        customerName: item.customerName,
+        totalPoints: `${item.totalPoints} ${item.totalPoints > 1 ? 'points' : 'point'}`,
+    });
 
     return (
         <div>
             <h3 className="total-reward-heading">{constants.TOTAL_POINTS_OVERALL}</h3>
-            <TableContainer component = {Paper}>
-                <Table className="total-reward-table" sx={{ maxHeight: 400 }} aria-label="simple table">
-                    <TableHead>
-                        <TableRow className="table-row">
-                            <TableCell>{constants.CUSTOMER_NAME}</TableCell>
-                            <TableCell>{constants.TOTAL_POINTS_OVERALL}</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {customerPoints.map((entry, index) => (
-                              <TableRow key={index}>
-                              <TableCell>{entry.customerName}</TableCell>
-                              <TableCell>{entry.totalPoints}{' '}
-                                         {entry.totalPoints > 1 ? 'points' : 'point'}
-                              </TableCell>          
-                          </TableRow>     
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+            <RewardTable purchaseData={Object.values(customerPoints)} columns={columns} serializer={serializer} />
         </div>
     )
 };

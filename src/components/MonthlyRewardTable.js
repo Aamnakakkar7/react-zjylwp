@@ -1,38 +1,33 @@
-import { Table, TableContainer, TableBody, TableCell, TableRow, TableHead, Paper} from '@mui/material';
-import { constants } from '../utils';
 import React from 'react';
-import '../style.css';
+import RewardTable from './RewardTable';
+import { constants } from '../utils';
 import PropTypes from 'prop-types';
 
 
 const MonthlyRewardTable = (({receivedData}) => {
+    const columns = [
+        { field: 'customerId', headerName: constants.ID_OF_CUSTOMER },
+        { field: 'customerName', headerName: constants.CUSTOMER_NAME },
+        { field: 'totalRewards', headerName: constants.POINTS },
+    ];
+
+    const data = Object.keys(receivedData).flatMap((filterKey) => 
+        Object.values(receivedData[filterKey]).map((item) => ({ ...item, filterKey }))
+    );
+
+    const serializer = (item) => ({
+        customerId: item.customerId,
+        customerName: item.customerName,
+        totalRewards: item.totalRewards,
+    });
     return (
         <div>
-            <TableContainer component = {Paper}>
-                {Object.keys(receivedData).map((filterKey) => (
-                    <React.Fragment key={filterKey}>
-                        <h3>{filterKey}</h3>
-                        <Table className="reward-table" sx={{ maxHeight: 400 }} aria-label="simple table">
-                            <TableHead>
-                                <TableRow className="table-row">
-                                    <TableCell>{constants.ID_OF_CUSTOMER}</TableCell>
-                                    <TableCell>{constants.CUSTOMER_NAME}</TableCell>
-                                    <TableCell>{constants.POINTS}</TableCell>
-                                    </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {Object.values(receivedData[filterKey]).map((customer) => (
-                                    <TableRow key={customer.customerId}>
-                                        <TableCell>{customer.customerId}</TableCell>
-                                        <TableCell>{customer.customerName}</TableCell>
-                                        <TableCell>{customer.totalRewards}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </React.Fragment>
-                ))}
-            </TableContainer>
+            {Object.keys(receivedData).map((filterKey) => (
+                <div key={filterKey}>
+                    <h3>{filterKey}</h3>
+                    <RewardTable purchaseData={Object.values(receivedData[filterKey])} columns={columns} serializer={serializer} />
+                </div>
+            ))}
         </div>
     );
 });
