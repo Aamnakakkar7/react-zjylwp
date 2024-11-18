@@ -1,5 +1,6 @@
 import React from 'react';
-import { constants, calculateOverallRewardPoints } from '../utils';
+import { calculateOverallRewardPoints } from '../utils';
+import { constants } from '../utils/constants';
 import RewardTable from './RewardTable';
 import PropTypes from 'prop-types';
 

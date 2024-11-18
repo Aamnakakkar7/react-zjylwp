@@ -1,6 +1,7 @@
 import React from 'react';
 import RewardTable from './RewardTable';
-import { constants, calculatePointsPerTransaction } from '../utils';
+import { calculatePointsPerTransaction } from '../utils';
+import { constants } from '../utils/constants';
 import PropTypes from 'prop-types';
 
 
@@ -25,7 +26,6 @@ const AllTransactionsTable = ((purchaseData) => {
         points: calculatePointsPerTransaction(item.amount),
     });
 
-    console.log('data passed:', purchaseData);
     return (
         <div>
             <h3 className='total-transactions'>{constants.ALL_TRANSACTIONS}</h3>

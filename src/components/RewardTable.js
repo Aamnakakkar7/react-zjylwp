@@ -30,13 +30,4 @@ const RewardTable = ({ purchaseData, columns, serializer }) => {
     );
 };
 
-// AllTransactionsTable.propTypes = {
-//     purchaseId: PropTypes.number,
-//     customerId: PropTypes.number,
-//     customerName: PropTypes.string,
-//     purchaseDate: PropTypes.string,
-//     productPurchased: PropTypes.string,
-//     amount: PropTypes.number
-// };
-
 export default RewardTable;

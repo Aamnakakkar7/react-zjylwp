@@ -1,6 +1,6 @@
 import React from 'react';
 import RewardTable from './RewardTable';
-import { constants } from '../utils';
+import { constants } from '../utils/constants';
 import PropTypes from 'prop-types';
 
 

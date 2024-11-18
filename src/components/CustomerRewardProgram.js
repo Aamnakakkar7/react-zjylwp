@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchTransactionsData } from '../services/rewardProgramService';
-import { constants, latestMonthsDataSet } from '../utils';
+import { latestMonthsDataSet } from '../utils';
+import { constants } from '../utils/constants';
 import MonthlyRewardTable from './MonthlyRewardTable';
 import AllTransactionsTable from './AllTransactionsTable';
 import OverallRewardsTable from './OverallRewardsTable';
@@ -24,9 +25,9 @@ const CustomerRewardProgram = () => {
             logger.log('All Transactions Data has been fetched');
             logger.log('Latest three months data has been fetched successfully');
         }
-      } catch (errorMessage) {
-          logger.log('Error:', errorMessage);
-          setErrorMessage(errorMessage);
+      } catch (error) {
+          logger.log('Error:', error.message);
+          setErrorMessage(error.message);
       } finally {
         setLoadingData(false);
       }
