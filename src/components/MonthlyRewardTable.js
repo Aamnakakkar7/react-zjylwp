@@ -24,7 +24,7 @@ const MonthlyRewardTable = (({receivedData}) => {
         <div>
             {Object.keys(receivedData).map((filterKey) => (
                 <div key={filterKey}>
-                    <h3>{filterKey}</h3>
+                    <h4>{filterKey}</h4>
                     <RewardTable purchaseData={Object.values(receivedData[filterKey])} columns={columns} serializer={serializer} />
                 </div>
             ))}

@@ -4,6 +4,11 @@ p {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+h3 {
+  text-align: center;
+
+}
+
 .total-transactions {
   font-size: 20px;
   margin-top: 50px;
@@ -11,7 +16,6 @@ p {
 
 .reward-heading {
   font-size: x-large;
-  text-align: center;
 }
 
 .loading {
