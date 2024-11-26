@@ -6,7 +6,7 @@ export const calculateOverallRewardPoints = (purchaseData) => {
     if (!Array.isArray(purchaseData)) {
         return {};
     }
- 
+
     return purchaseData.reduce((acc, items) => {
         const { customerName, customerId, amount } = items;
         if (!acc[customerId]) {

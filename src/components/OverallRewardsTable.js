@@ -6,21 +6,27 @@ import PropTypes from 'prop-types';
 
 const OverallRewardsTable = ({purchaseData}) => {
     const columns = [
-        { field: 'customerName', headerName: constants.CUSTOMER_NAME },
-        { field: 'totalPoints', headerName: constants.TOTAL_POINTS_OVERALL },
+        { field: 'customerName', headerName: constants.CUSTOMER_NAME, sortable: false },
+        { field: 'totalPoints', headerName: constants.TOTAL_POINTS_OVERALL, sortable: false },
     ]
     const customerPointsObject = calculateOverallRewardPoints(purchaseData);
     const customerPoints = Object.values(customerPointsObject || {});
 
     const serializer = (item) => ({
-        customerName: item.customerName,
+       ...item,
         totalPoints: `${item.totalPoints} ${item.totalPoints > 1 ? 'points' : 'point'}`,
     });
 
     return (
         <div>
             <h3 className="total-reward-heading">{constants.TOTAL_POINTS_OVERALL}</h3>
-            <RewardTable purchaseData={Object.values(customerPoints)} columns={columns} serializer={serializer} />
+            <RewardTable 
+                purchaseData={Object.values(customerPoints)} 
+                columns={columns} 
+                serializer={serializer}
+                enableSorting={false}
+                enableFiltering={false}
+            />
         </div>
     )
 };

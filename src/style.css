@@ -47,3 +47,14 @@ h3 {
   font-size: 12px;
   font-weight: bold;
 }
+
+.search-container { 
+  display: flex; 
+  justify-content: flex-end;
+}
+
+.search-bar {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 200px;
+}

@@ -16,4 +16,5 @@ export const constants = {
   CUSTOMER_NAME: 'Customer Name',
   PRODUCT_PURCHASED: 'Product Purchased',
   ALL_TRANSACTIONS: 'All Transactions',
+  NO_RESULTS: 'No matching records'
 }
